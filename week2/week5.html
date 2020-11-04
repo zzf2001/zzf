@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="week5.css">
+
+</head>
+<body>
+<div id="box" class="Hz"></div>
+<div id="box1" class="Hz"></div>
+<div id="box2" class="Hz"></div>
+<div id="box3" class="Hz"></div>
+<div id="box4" class="Hz"></div>
+<div id="box5" class="Hz"></div>
+<div id="box6" class="Hz"></div>
+<div id="box7" class="Hz"></div>
+
+<h1 id="ll"></h1>
+<button id="start">点击</button>
+<input type="text" id="put">
+<h1 ID="S"></h1>
+
+</body>
+<script>
+    let start=document.getElementById("start");
+    let i=0;
+    let a = new Array();
+    a[0]=document.getElementById("box");
+
+    a[1]=document.getElementById("box1");
+    a[2]=document.getElementById("box2");
+    a[3]=document.getElementById("box3");
+    a[4]=document.getElementById("box4");
+    a[5]=document.getElementById("box5");
+    a[6]=document.getElementById("box6");
+    a[7]=document.getElementById("box7");
+
+    start.onclick= function (){
+        let put=document.getElementById("put").value
+        put = Number(put);
+        let timer;
+        let x=1;
+        timer=setInterval(function (){
+
+            x++;
+            if(i==7){ i=i-7;}
+            i++;
+
+
+            a[i].style.animation = "move 5s";
+            if (x>put)
+            {clearInterval(timer)}
+        },1000)
+    }
+</script>
+</html>
